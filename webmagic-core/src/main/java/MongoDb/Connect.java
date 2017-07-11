@@ -21,7 +21,7 @@ public class Connect {
 		//连接数据库 start
         MongoCredential credential = MongoCredential.createCredential("tonny", "mydb", "123".toCharArray());
             ServerAddress serverAddress;
-        serverAddress = new ServerAddress("192.168.10.100", 27017);
+        serverAddress = new ServerAddress("127.0.0.1", 27017);
         List<ServerAddress> addrs = new ArrayList<ServerAddress>();
         addrs.add(serverAddress);
         List<MongoCredential> credentials = new ArrayList<MongoCredential>();

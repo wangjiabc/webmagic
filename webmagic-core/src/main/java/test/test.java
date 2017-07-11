@@ -1,46 +1,35 @@
 package test;
 
-import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
+import tool.testUrl;
+
 
 
 
 public class test {
 	 public static void main(String args[]) {  
-	        //创建HttpClientBuilder  
-	        HttpClientBuilder httpClientBuilder = HttpClientBuilder.create();  
-	        //HttpClient  
-	        CloseableHttpClient closeableHttpClient = httpClientBuilder.build();  
-	  
-	        HttpGet httpGet = new HttpGet("http://luzhou.58.com/zplvyoujiudian/29019882043314x.shtml");  
-	        System.out.println(httpGet.getRequestLine());  
-	        try {  
-	            //执行get请求  
-	            HttpResponse httpResponse = closeableHttpClient.execute(httpGet);  
-	            //获取响应消息实体  
-	            HttpEntity entity = httpResponse.getEntity();  
-	            //响应状态  
-	            System.out.println("status:" + httpResponse.getStatusLine());  
-	            //判断响应实体是否为空  
-	            if (entity != null) {  
-	                System.out.println("contentEncoding:" + entity.getContentEncoding());  
-	                System.out.println("response content:" + EntityUtils.toString(entity));  
-	            }  
-	        } catch (IOException e) {  
-	            e.printStackTrace();  
-	        } finally {  
-	            try {  
-	            //关闭流并释放资源  
-	            closeableHttpClient.close();  
-	        } catch (IOException e) {  
-	            e.printStackTrace();  
-	        }  
-	    }  
-	}  
+		 Map<String, String> map=new HashMap<>();
+		 map.put("aaa", "aaa");
+		 map.put("jiazhengbaojiexin", "4444");
+		 map.put("bbb", "aaa");
+		 map.put("ccc", "aaa");
+		 
+		 map.put("ddd", "aaa");
+		 map.put("fff", "aaa");
+		 map.put("eee", "aaa");
+		 
+		 map.put("aaa", "aaa");
+ map.put("ccc", "aaa");
+		 
+		 map.put("zhuanye", "sdsds");
+		 map.put("fff", "aaa");
+		 map.put("eee", "aaa");
+		 
+		 map.put("aaa", "aaa");
+		 String url="http://luzhou.58.com/zhuanye/30457499678397x.shtml?psid=143322286196566960445646755&entinfo=30457499678397_j&ytdzwdetaildj=0";
+         String aString=testUrl.match(map, url);
+         System.out.println(aString);
+	 }
 }

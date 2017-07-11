@@ -18,9 +18,10 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 import Model.AssortDocument;
-import Model.CurrenModel;
+import MongoDb.CurrenConnect;
 
-public class TestMongodb extends CurrenModel{
+
+public class TestMongodb extends CurrenConnect{
 
 	private static final String db="col";
 	
@@ -40,7 +41,7 @@ public class TestMongodb extends CurrenModel{
 	            
 	            assortDocument.setTitle("bbb");
 	            assortDocument.setContent("dsafffffffffffffffff");
-	            assortDocument.setDate(new Date());
+	            assortDocument.setDate(new Date().toString());
 	            
 	            collection.insertOne(assortDocument.getDocument());
 	                    System.out.println("文档插入成功");  

@@ -23,7 +23,7 @@ public class tc58 implements PageProcessor {
 	            .me()
 	            .setDomain("http://luzhou.58.com/")
 	            .setRetryTimes(3)
-	            .setSleepTime(10000)
+	            .setSleepTime(100000)
 	            .setUserAgent(
 	                    "Mozilla/5.0");
 
